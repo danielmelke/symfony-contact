@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ContactDataRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ContactDataRepository::class)
@@ -24,6 +25,10 @@ class ContactData
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Email(
+     *      message = "A megadott e-mail cím '{{ value }}' nem megfelelő!"
+     * )
      */
     private $email;
 

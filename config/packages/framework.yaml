@@ -16,6 +16,10 @@ framework:
     #fragments: true
     php_errors:
         log: true
+    form:
+        legacy_error_messages: false
+
+    validation: { enable_annotations: true}
 
 when@test:
     framework:
